@@ -12,7 +12,7 @@ the following features:
 ├── config
 │   └── database.js       // Database configuration
 ├── middleware
-│   └── auth.js           // User Authentication
+│   └── auth.js           // User Authentication using token
 ├── model
 │   └── user.js           // User schema
 ├── uploads               // Directory where Multer saves uploaded csv files 
