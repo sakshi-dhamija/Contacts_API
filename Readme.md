@@ -1,6 +1,22 @@
 # Contacts API
 
+A set of APIs built using Node(Express) + MongoDB(mongoose) with
+the following features:
 
+- Authentication module using jwt
+- Upload and save contact (csv file) through api in db using service workers.
+
+## Structure
+
+├── config
+│   └── database.js       // Database configuration
+├── middleware
+│   └── auth.js           // User Authentication
+├── model
+│   └── user.js           // User schema
+├── uploads               // Directory where Multer saves uploaded csv files 
+└── app.js                // API implementation
+└── index.js              //Server setup
 
 ## API
 
