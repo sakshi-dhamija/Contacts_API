@@ -88,6 +88,13 @@ app.get('/display-users', (req, res) => {
     });
 });
 
+const auth = require("./middleware/auth");
+
+//Authorization using user token
+app.post("/home", auth, (req, res) => {
+  res.status(200).send("Welcome 🙌 ");
+});
+
 var upload = multer({ dest: 'uploads/' });
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -46,6 +46,10 @@ GET
 : Displays the list of registered users</li>
 </ul>
 
+/home
+
+- POST: Route that requires a user JWT token in the header.
+
 /upload-csv
 <ul>
 <li>
@@ -54,3 +58,5 @@ POST
 <li>Single CSV file upload</li>
 <li>CSV file can contain multiple entries</li>
 </ul>
+
+
