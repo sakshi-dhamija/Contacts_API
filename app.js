@@ -88,5 +88,40 @@ app.get('/display-users', (req, res) => {
     });
 });
 
+var upload = multer({ dest: 'uploads/' });
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
+//CSV file upload
+app.post('/upload-csv', upload.single('file'), (req, res, next) => {
+    csv()
+    .fromFile(req.file.path)
+    .then((jsonObj)=>{
+        var input = [];
+        for(var i = 0;i<jsonObj.length;i++){
+            var obj={};
+            obj.name=jsonObj[i]['Name'];
+            obj.phone=jsonObj[i]['Phone'];
+            obj.email=jsonObj[i]['Email'];
+            obj.linkedin_url = obj.email=jsonObj[i]['LinkedIn Url'];
+            input.push(obj);
+        }
+        User.insertMany(input).then(function(){
+            res.status(200).send({
+                message: "Successfully Uploaded!"
+            });
+        }).catch(function(error){
+            res.status(500).send({
+                message: "failure",
+                error
+            });
+        });
+    }).catch((error) => {
+        res.status(500).send({
+            message: "failure2",
+            error
+        });
+    })
+});
 module.exports = app;
