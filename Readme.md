@@ -19,12 +19,12 @@
 
 /display-users
 <ul>
-<li>Displays the list of registered users</li>
+<li>GET: Displays the list of registered users</li>
 </ul>
 
 /upload-csv
 <ul>
-<li>Uploads and saves contact information from csv file to mongo db database</li>
+<li>POST: Uploads and saves contact information from csv file to mongo db database</li>
 <li>Single CSV file upload</li>
 <li>CSV file can contain multiple entries</li>
 </ul>
