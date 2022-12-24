@@ -59,4 +59,8 @@ POST
 <li>CSV file can contain multiple entries</li>
 </ul>
 
+## Future Scope:
+- [ ] Add test with a precise error when one or more contacts in the csv file are already registered.
+- [ ] Input linkedIn Url as type: url rather then type: string (when required)
+
 
