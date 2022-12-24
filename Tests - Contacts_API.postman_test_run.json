@@ -1,0 +1,215 @@
+{
+	"id": "91d0e72b-f3be-44a6-9ec9-4a3b5b677857",
+	"name": "Tests - Contacts_API",
+	"timestamp": "2022-12-24T18:11:46.727Z",
+	"collection_id": "9989261-33ebed15-6c83-4095-8fd7-ae9f7cb58d37",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 4,
+	"totalFail": 8,
+	"results": [
+		{
+			"id": "5afd5aa8-0e9b-4653-9c04-efc8c4f95de2",
+			"name": "Display the list of users",
+			"url": "http://localhost:4001/display-users",
+			"time": 258,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				258
+			],
+			"allTests": [
+				{
+					"response must be valid and have a body": true
+				}
+			]
+		},
+		{
+			"id": "326f5899-840a-4f2e-9b34-c98744950a91",
+			"name": "Register user",
+			"url": "http://localhost:4001/register",
+			"time": 235,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Successful POST request": false,
+				"Missing input": false,
+				"User already registered": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Missing input": {
+					"pass": 0,
+					"fail": 1
+				},
+				"User already registered": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Successful POST request": false,
+					"Missing input": false,
+					"User already registered": true
+				}
+			]
+		},
+		{
+			"id": "fffbc587-96c9-475c-bf55-2e8e8fe3fe09",
+			"name": "Login user",
+			"url": "http://localhost:4001/login",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"response must be valid and have a body": false,
+				"User does not exist in the database": false,
+				"Missing input": true
+			},
+			"testPassFailCounts": {
+				"response must be valid and have a body": {
+					"pass": 0,
+					"fail": 1
+				},
+				"User does not exist in the database": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Missing input": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"response must be valid and have a body": false,
+					"User does not exist in the database": false,
+					"Missing input": true
+				}
+			]
+		},
+		{
+			"id": "93884260-d50c-475f-865d-efb2dac8887a",
+			"name": "Home ",
+			"url": "http://localhost:4001/home",
+			"time": 5,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Succesfull authentication": false,
+				"Missing header token": false,
+				"Input token does not match user token": true
+			},
+			"testPassFailCounts": {
+				"Succesfull authentication": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Missing header token": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Input token does not match user token": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Succesfull authentication": false,
+					"Missing header token": false,
+					"Input token does not match user token": true
+				}
+			]
+		},
+		{
+			"id": "86ac5bb3-9221-4f55-9cd0-3693ebcf4675",
+			"name": "http://localhost:4001/upload-csv",
+			"url": "http://localhost:4001/upload-csv",
+			"time": 6,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"User already exists": false,
+				"User data added in the database": false
+			},
+			"testPassFailCounts": {
+				"User already exists": {
+					"pass": 0,
+					"fail": 1
+				},
+				"User data added in the database": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"User already exists": false,
+					"User data added in the database": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 512,
+	"collection": {
+		"requests": [
+			{
+				"id": "5afd5aa8-0e9b-4653-9c04-efc8c4f95de2",
+				"method": "GET"
+			},
+			{
+				"id": "326f5899-840a-4f2e-9b34-c98744950a91",
+				"method": "POST"
+			},
+			{
+				"id": "fffbc587-96c9-475c-bf55-2e8e8fe3fe09",
+				"method": "POST"
+			},
+			{
+				"id": "93884260-d50c-475f-865d-efb2dac8887a",
+				"method": "POST"
+			},
+			{
+				"id": "86ac5bb3-9221-4f55-9cd0-3693ebcf4675",
+				"method": "POST"
+			}
+		]
+	}
+}
