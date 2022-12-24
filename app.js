@@ -111,7 +111,7 @@ app.post('/upload-csv', upload.single('file'), (req, res, next) => {
             obj.name=jsonObj[i]['Name'];
             obj.phone=jsonObj[i]['Phone'];
             obj.email=jsonObj[i]['Email'];
-            obj.linkedin_url = obj.email=jsonObj[i]['LinkedIn Url'];
+            obj.linkedin_url = jsonObj[i]['LinkedIn Url'];
             input.push(obj);
         }
         User.insertMany(input).then(function(){
